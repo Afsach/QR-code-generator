@@ -5,6 +5,9 @@ let imgBox = document.getElementById('imgBox');
 function generateQR(){
     if(qrText.value.length > 0){
         qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrText.value}`;
+        if(imgBox.classList.contains('hide-img')){
+            imgBox.classList.remove('hide-img');
+        }
         imgBox.classList.add('show-img');
     }else{
         imgBox.classList.add('hide-img');
